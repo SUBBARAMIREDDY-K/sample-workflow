@@ -10,9 +10,14 @@ jobs:
               run: |
                 pwd
                 ls -a
+                echo $GITHUB_SHA
+                echo $GITHUB_REPOSITORY
+                echo $GITHUB_WORKFLOW
+                echo "${{github.token}}"
+
 
             - name: Checkout
-              uses: actions/checkout@v2
+              uses: actions/checkout@v2  #This is used to checkout the environment
             - name: List Files After Checkout
               run: |
                    pwd
