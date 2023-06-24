@@ -10,7 +10,10 @@ jobs:
         run: echo 'Welcome to GitHub Actions!'
       - name: multiline script
         run: |
-          echo Add other actions to build,
-          echo test, and deploy your project.
           npm -v
           node -v
+      - name: python command
+        run: |
+          import platform
+          print(platform.processor())
+        shell: python
