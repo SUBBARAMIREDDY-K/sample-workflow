@@ -1,0 +1,16 @@
+name: Custom Environment Variables
+
+on: push
+
+env:
+    SUBSCRIBE: Subscribe # Available for All Jobs
+jobs:
+    Subscribe-my-channel:
+        runs-on: ubuntu-latest
+        env:
+            LIKE: Please like Share # Avaialble to the specific job
+        steps:
+            - name: "Please like share and sunscribe our DevOps Hint channel"
+              run: echo"$LIKE and $SUBSCRIBE our $CHANNEL_NAME channel."
+              env: 
+                CHANNEL_NAME: DEVOPS HINT  # Available to the specific step
