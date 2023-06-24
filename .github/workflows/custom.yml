@@ -11,7 +11,7 @@ jobs:
             LIKE: Please like Share # Avaialble to the specific job
         steps:
             - name: "Please like share and sunscribe our DevOps Hint channel"
+              run: echo "$LIKE and $SUBSCRIBE our $CHANNEL_NAME channel."
               env: 
                 CHANNEL_NAME: DEVOPS HINT  # Available to the specific step
-              run: echo"$LIKE and $SUBSCRIBE our $CHANNEL_NAME channel."
               
