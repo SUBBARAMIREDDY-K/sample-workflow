@@ -1,6 +1,19 @@
 name: Action Workflow
 
-on: [push]
+on: 
+    push:
+        branches:
+            - main
+            - demo/*
+            - '!sample' # It will ignore the specific branch
+
+        tags:
+            - v1.*
+        paths:
+            - '**.js'
+            - '**.md'
+            - 'doc/*'
+            - '!docs/file.txt'
 
 jobs:
     run-github-actions:
@@ -12,8 +25,8 @@ jobs:
                 ls -a
                 echo $GITHUB_SHA
                 echo $GITHUB_REPOSITORY
-                echo $GITHUB_WORKFLOW
-                echo "${{github.token}}"
+                echo $GITHUB_WORKSPACE
+                echo "${{ github.token }}"
 
 
             - name: Checkout
